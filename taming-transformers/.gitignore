@@ -1,0 +1,7 @@
+*.png
+*.jpg
+/logs
+*.pyc
+*.pth
+*.ckpt
+wandb
