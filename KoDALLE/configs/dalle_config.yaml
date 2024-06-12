@@ -6,7 +6,7 @@ DALLE_CFG:
   RESUME: exists(DALLE_PATH)
 
   EPOCHS: 5
-  BATCH_SIZE: 24
+  BATCH_SIZE: 16
 
   # configuration mimics of: https://github.com/lucidrains/DALLE-pytorch/discussions/131
   # Hyperparameter testing on pytorch-dalle: https://github.com/lucidrains/DALLE-pytorch/issues/84
