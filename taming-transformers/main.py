@@ -9,7 +9,7 @@ import pytorch_lightning as pl
 from pytorch_lightning import seed_everything
 from pytorch_lightning.trainer import Trainer
 from pytorch_lightning.callbacks import ModelCheckpoint, Callback, LearningRateMonitor
-from pytorch_lightning.utilities.distributed import rank_zero_only
+from pytorch_lightning.utilities import rank_zero_info
 import wandb
 
 from taming.data.utils import custom_collate
@@ -247,7 +247,7 @@ class ImageLogger(Callback):
             self.log_steps = [self.batch_freq]
         self.clamp = clamp
 
-    @rank_zero_only
+    @rank_zero_info
     def _wandb(self, pl_module, images, batch_idx, split):
         # raise ValueError("No way wandb")
         grids = dict()
@@ -256,7 +256,7 @@ class ImageLogger(Callback):
             grids[f"{split}/{k}"] = wandb.Image(grid)
         pl_module.logger.experiment.log(grids)
 
-    @rank_zero_only
+    @rank_zero_info
     def _testtube(self, pl_module, images, batch_idx, split):
         for k in images:
             grid = torchvision.utils.make_grid(images[k])
@@ -265,7 +265,7 @@ class ImageLogger(Callback):
             tag = f"{split}/{k}"
             pl_module.logger.experiment.add_image(tag, grid, global_step=pl_module.global_step)
 
-    @rank_zero_only
+    @rank_zero_info
     def log_local(self, save_dir, split, images, global_step, current_epoch, batch_idx):
         root = os.path.join(save_dir, "images", split)
         for k in images:
