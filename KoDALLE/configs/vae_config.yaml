@@ -1,6 +1,6 @@
 VAE_CFG:
-  MODEL_PATH: "/home/brad/Development/taming-transformers/logs/2022-07-21T12-44-12_VQGAN_blue/checkpoints/best.ckpt" # trained from scratch prior to the DALLE
-  CONFIG_PATH: "/home/brad/Development/taming-transformers/configs/VQGAN_blue.yaml"
+  MODEL_PATH: "/content/drive/MyDrive/ai 시스템/KoDALLE/epoch=000007.ckpt" # trained from scratch prior to the DALLE
+  CONFIG_PATH: "/content/drive/MyDrive/ai 시스템/KoDALLE/loaded_VQGAN_blue.yaml"
   IMAGE_SIZE: 256
   IMAGE_PATH: "./"
 
