@@ -3,6 +3,7 @@
 **ABSTRACT**
 
 This study aims to develop a ideal face image generation by text description. We trained a VQGAN model using the AI-Hub montage dataset and integrated this model as the encoder and decoder for the KoDALLE framework. Subsequently, we refined the output of the KoDALLE model to align with aesthetically pleasing facial features using StyleGANEX, which had been trained on CelebA dataset. This approach aimed to generate final outputs that closely resemble idealized human appearances. Despite the seamless progression during the training phase, the process was hindered by limited computational resources, preventing sufficient model training. Consequently, the validation results were suboptimal, and the final application did not produce satisfactory outcomes.
+(view [Ideal Face Generation Model.pdf](https://github.com/aisys-group5/Dreammate-Generator/blob/main/ideal_face_generation_model.pdf))
 
 **training process**
 
