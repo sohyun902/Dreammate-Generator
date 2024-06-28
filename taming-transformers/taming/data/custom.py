@@ -22,7 +22,7 @@ class CustomBase(Dataset):
 
 
 class CustomTrain(CustomBase):
-    def __init__(self, paths=None, file_path=None, size=None, training_images_list_file=None):
+    def __init__(self, file_path=None, size=None, training_images_list_file=None):
         super().__init__()
         self.paths=None
         if not file_path:
@@ -43,7 +43,7 @@ class CustomTrain(CustomBase):
 
 
 class CustomTest(CustomBase):
-    def __init__(self, paths=None, file_path=None, size=None, test_images_list_file=None):
+    def __init__(self, file_path=None, size=None, test_images_list_file=None):
         super().__init__()
         if not file_path:
             paths=None
